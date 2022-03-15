@@ -69,6 +69,12 @@ class Auth
             die('пароли не совпадают');
         }
 
+        $age = explode("-", $date);
+        $age = 2022-$age[0];
+        if($age<18){
+            die('Вам нет 18');
+        }
+
         $user = \R::dispense('users');
         $user->email = $email;
         $user->password = password_hash($password,PASSWORD_DEFAULT);
@@ -77,6 +83,8 @@ class Auth
         $user->avatar = $path;
         $user->date = $date;
         $user->pol = $pol;
+        $user->age = $age;
+        echo $age;
         $user->group = 1; // 1-пользователь , 2 - админ
         \R::store($user);
 

@@ -26,7 +26,10 @@
                         <a class="nav-link active" href="/relationship">Анкета</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/chats">Чаты</a>
+                        <a class="nav-link active" aria-current="page" href="/chatsTo">Полученные</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/chatsFrom">Отправленные</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="/profile">Личный кабинет</a>

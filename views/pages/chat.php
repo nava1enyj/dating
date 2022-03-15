@@ -5,6 +5,9 @@ use App\Services\Router;
 if(!$_SESSION['user']){
     \App\Services\Router::redirect('/login');
 }
+if($_SESSION['user']['id']===$_SESSION['query']){
+    \App\Services\Router::redirect('/');
+}
 ?>
 <html>
 <?php
@@ -25,25 +28,14 @@ Page::par('navbar');
     <hr>
     <?php
 
-    $showMessages = \R::findAll('messages', 'id_user_from = ? AND id_user_to = ? ORDER BY `messages`.`date` ASC', [$_SESSION['user']['id'] , $_SESSION['query']]);
-    foreach ($showMessages as $showMessage){
+    $showMessagesFrom = \R::findAll('messages', 'id_user_from = ? AND id_user_to = ? ORDER BY `messages`.`date` ASC', [$_SESSION['user']['id'] , $_SESSION['query']]);
+    $showMessagesTo = \R::findAll('messages', 'id_user_from = ? AND id_user_to = ? ORDER BY `messages`.`date` ASC', [$_SESSION['query'] , $_SESSION['user']['id']]);
 
-        if($showMessage->id_user_from){
-            ?>
-            <p class="text-end"><?= $showMessage->message;?></p>
-            <?php
-        }
-        else{
-            ?>
-            <p class=""><?= $showMessage->message;?></p>
-            <?php
-        }
-        ?>
 
-    <?php
-    }
+
     ?>
-    <div class="fixed-bottom container mb-5">
+
+    <div class="container mb-5">
 
         <form method="post">
             <p class="mb-3">Написать письмо:</p>
@@ -56,16 +48,18 @@ Page::par('navbar');
             $message = $_POST['message'];
             if($message === ''){
                 ?>
-                    <p class="text-danger">Поле не заполнено</p>
+                <p class="text-danger">Поле не заполнено</p>
                 <?php
                 die();
             }
+
+
             $messages = \R::dispense('messages');
             $messages->idUserFrom = $_SESSION['user']['id'];
             $messages->idUserTo = $user->id;
             $messages->message = $message;
             \R::store($messages);
-            Router::redirect('chat/' . $user->id);
+            Router::redirect('successabout');
         }
 
         ?>
