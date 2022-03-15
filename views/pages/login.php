@@ -26,7 +26,7 @@ Page::par('navbar');
         </div>
 
         <p><a class="mt-2" href="register">У вас еще нет аккаунта , создайте его</a></p>
-        <button type="submit" class="btn btn-primary">Войти</button>
+        <button type="submit" class="btn btn-info">Войти</button>
     </form>
 
 </div>

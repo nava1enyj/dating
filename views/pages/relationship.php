@@ -72,7 +72,7 @@ Page::par('navbar');
             </div>
             <p for="" class="mb-3 text-danger fs-6" id="msgReg"></p>
             
-            <button type="submit" class="btn btn-primary ms-2" id="push-package">Отправить</button>
+            <button type="submit" class="btn btn-info ms-2" id="push-package">Отправить</button>
         </form>
     </div>
     </body>

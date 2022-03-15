@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+<nav class="navbar navbar-expand-sm navbar-dark bg-info">
     <div class="container-fluid">
         <a class="navbar-brand ms-2">
-            <img src="assets/img/logo2.png" alt="" width="50"> Курьерская служба</a>
+            <img src="assets/img/logo.svg" alt="" width="50"> Сайт знакомств</a>
         </button>
         <div class="container" align="center">
             <a class="navbar-brand" href="#" align="center">
@@ -9,7 +9,7 @@
         </div>
         <ul class="navbar-nav ms-auto mb-3 me-3 mt-1">
             <li class="nav-item">
-                <a class="nav-link active">Команда Орлова 2022</a>
+                <a class="nav-link active">Команда Смирновой 2022</a>
             </li>
         </ul>
 </nav>

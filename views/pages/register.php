@@ -70,7 +70,7 @@ Page::par('navbar');
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">Создать аккаунт</button>
+        <button type="submit" class="btn btn-info">Создать аккаунт</button>
     </form>
 
 </div>
